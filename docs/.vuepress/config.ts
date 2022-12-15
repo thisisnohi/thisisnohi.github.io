@@ -1,6 +1,8 @@
 import { defineUserConfig } from "vuepress";
 import { defaultTheme } from "@vuepress/theme-default";
-import { head, navbarEn, navbarZh, sidebarEn, sidebarZh } from './configs'
+import { head, navbarEn, navbarZh, sidebarEn, sidebarZh } from './configs';
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+import { searchPlugin } from '@vuepress/plugin-search'
 
 export default defineUserConfig({
   // set site base to default value
@@ -23,7 +25,19 @@ export default defineUserConfig({
     },
   },
 
-  plugins: [],
+  plugins: [
+    // 本地搜索
+    searchPlugin({
+      locales: {
+        '/': {
+          placeholder: 'Search',
+        },
+        '/zh/': {
+          placeholder: '搜索',
+        },
+      },
+    }),
+  ],
 
   // 默认主题
   theme: defaultTheme({
