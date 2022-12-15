@@ -1,12 +1,13 @@
 import { defineUserConfig } from "vuepress";
 import { defaultTheme } from "@vuepress/theme-default";
 import { head, navbarEn, navbarZh, sidebarEn, sidebarZh } from './configs';
-import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { searchPlugin } from '@vuepress/plugin-search'
 
 export default defineUserConfig({
   // set site base to default value
   base: '/',
+  // extra tags in `<head>`
+  head,
   lang: "zh-CN",
   title: "NOHI Notes", // 显示在左上角的网页名称以及首页在浏览器标签显示的title名称
   description: "使用VuePress制作的个人笔记", // meta 中的描述文字，用于SEO
@@ -41,7 +42,7 @@ export default defineUserConfig({
 
   // 默认主题
   theme: defaultTheme({
-    repo: "https://github.com/thisisnohi/nohi-notes", //github仓库地址
+    repo: "https://github.com/thisisnohi/thisisnohi.github.io", //github仓库地址
     editLink: false,
     lastUpdatedText: "最后更新时间",
     contributorsText: "作者",

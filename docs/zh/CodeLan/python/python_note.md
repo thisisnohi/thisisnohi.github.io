@@ -73,10 +73,10 @@ https://www.python.org/ftp/python/
 
 ## pyenv常用命令
 
-* 查看python版本: pyenv versions
-* 查看可下载版本: pyenv install -l 
-* 安装： pyenv install <version>
-* 切换版本： pyenv global <version>
+* 查看python版本: `pyenv versions`
+* 查看可下载版本: `pyenv install -l`
+* 安装： `pyenv install <version>`
+* 切换版本： `pyenv global <version>`
 
 
 

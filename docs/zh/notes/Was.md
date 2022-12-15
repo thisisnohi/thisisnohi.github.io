@@ -16,6 +16,7 @@ alias cdapp='cd /opt/IBM/WebSphere/AppServer/profiles/AppSrv01/installedApps/app
 
 ## 清理was缓存，手工删除应用
 
+```
 1. Stop server
 2. 进入$Profile_install_root/installedApps/$CellName目录,删除你期望删除的应用，例如 TestAsyncInvokerApp.ear
 3. 进入$Profile_install_root/tranlog目录，清空tranlog目录
@@ -32,4 +33,4 @@ Portlet deployment fails with 'A composition unit with name already exists'
 <profile root>/config/cells/cellname/applications/PA_myApp
 <profile root>/config/cells/cellname/blas/PA_myApp
 <profile root>/config/cells/cellname/cus/PA_myApp
-    
+```    
