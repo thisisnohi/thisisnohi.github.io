@@ -1,0 +1,54 @@
+import{_ as n,p as a,q as s,a1 as e}from"./framework-613df08c.js";const t={},p=e(`<h1 id="apachebench-ab" tabindex="-1"><a class="header-anchor" href="#apachebench-ab" aria-hidden="true">#</a> ApacheBench（ab）</h1><blockquote><p>web压测工具</p></blockquote><p>ab 命令对发出负载的计算机要求很低，既不会占用很高 CPU，也不会占用很多内存，但却会给目标服务器造成巨大的负载，其原理类似 CC 攻击。自己测试使用也须注意，否则一次上太多的负载，可能造成目标服务器因资源耗完，严重时甚至导致死机。</p><h2 id="apachebench-参数说明" tabindex="-1"><a class="header-anchor" href="#apachebench-参数说明" aria-hidden="true">#</a> ApacheBench 参数说明</h2><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code>ab <span class="token punctuation">[</span> <span class="token parameter variable">-A</span> auth-username:password <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-b</span> windowsize <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-B</span> local-address <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-c</span> concurrency <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-C</span> cookie-name<span class="token operator">=</span>value <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-d</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-e</span> csv-file <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-f</span> protocol <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-g</span> gnuplot-file <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-h</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-H</span> custom-header <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-i</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-k</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-l</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-m</span> HTTP-method <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-n</span> requests <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-p</span> POST-file <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-P</span> proxy-auth-username:password <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-q</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-r</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-s</span> <span class="token function">timeout</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-S</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-t</span> timelimit <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-T</span> content-type <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-u</span> PUT-file <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-v</span> verbosity<span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-V</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-w</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-x</span>
+<span class="token parameter variable">-attributes</span> <span class="token punctuation">]</span>
+ <span class="token punctuation">[</span> <span class="token parameter variable">-X</span> proxy<span class="token punctuation">[</span>:port<span class="token punctuation">]</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> -y-attributes <span class="token punctuation">]</span> <span class="token punctuation">[</span> -z-attributes <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token parameter variable">-Z</span> ciphersuite <span class="token punctuation">]</span> <span class="token punctuation">[</span>http<span class="token punctuation">[</span>s<span class="token punctuation">]</span>://<span class="token punctuation">]</span>hostname<span class="token punctuation">[</span>:port<span class="token punctuation">]</span>/path
+ 
+ ab <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>http<span class="token punctuation">[</span>s<span class="token punctuation">]</span>://<span class="token punctuation">]</span>hostname<span class="token punctuation">[</span>:port<span class="token punctuation">]</span>/path
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>Options are:
+    // 在测试会话中所执行的请求个数（本次测试总共要访问页面的次数）。默认时，仅执行一个请求。
+    -n requests     Number of requests to perform  
+    // 一次产生的请求个数（并发数）。默认是一次一个。
+    -c concurrency  Number of multiple requests to make at a time
+    -t timelimit    Seconds to max. to spend on benchmarking
+                    This implies -n 50000
+    -s timeout      Seconds to max. wait for each response
+                    Default is 30 seconds
+    -b windowsize   Size of TCP send/receive buffer, in bytes
+    -B address      Address to bind to when making outgoing connections
+    // POST 的数据的文件，文件格式如“p1=1&amp;p2=2”.使用方法是 -p 111.txt 。 （配合-T）
+    -p postfile     File containing data to POST. Remember also to set -T
+    -u putfile      File containing data to PUT. Remember also to set -T
+    // Content-type 头信息，如 -T “application/x-www-form-urlencoded” 
+    -T content-type Content-type header to use for POST/PUT data, eg.
+                    &#39;application/x-www-form-urlencoded&#39;
+                    Default is &#39;text/plain&#39;
+    -v verbosity    How much troubleshooting info to print
+    -w              Print out results in HTML tables
+    -i              Use HEAD instead of GET
+    -x attributes   String to insert as table attributes
+    -y attributes   String to insert as tr attributes
+    -z attributes   String to insert as td or th attributes
+    -C attribute    Add cookie, eg. &#39;Apache=1234&#39;. (repeatable)
+    -H attribute    Add Arbitrary header line, eg. &#39;Accept-Encoding: gzip&#39;
+                    Inserted after all normal header lines. (repeatable)
+    -A attribute    Add Basic WWW Authentication, the attributes
+                    are a colon separated username and password.
+    -P attribute    Add Basic Proxy Authentication, the attributes
+                    are a colon separated username and password.
+    -X proxy:port   Proxyserver and port number to use
+    -V              Print version number and exit
+    -k              Use HTTP KeepAlive feature
+    -d              Do not show percentiles served table.
+    -S              Do not show confidence estimators and warnings.
+    -q              Do not show progress when doing more than 150 requests
+    -l              Accept variable document length (use this for dynamic pages)
+    -g filename     Output collected data to gnuplot format file.
+    -e filename     Output CSV file with percentages served
+    -r              Don&#39;t exit on socket receive errors.
+    -m method       Method name
+    -h              Display usage information (this message)
+    -I              Disable TLS Server Name Indication (SNI) extension
+    -Z ciphersuite  Specify SSL/TLS cipher suite (See openssl ciphers)
+    -f protocol     Specify SSL/TLS protocol
+                    (TLS1, TLS1.1, TLS1.2 or ALL)
+    -E certfile     Specify optional client certificate chain and private key
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>常用<code>ab -c 1000 -n 100 http://10.50.120.121/test/blank</code></p>`,7),i=[p];function o(c,l){return a(),s("div",null,i)}const u=n(t,[["render",o],["__file","ab-ApacheBench.html.vue"]]);export{u as default};

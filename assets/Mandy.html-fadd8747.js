@@ -1,0 +1,1 @@
+const e=JSON.parse('{"key":"v-5e71d8be","path":"/zh/aa_everyday/Mandy.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[{"level":2,"title":"二年级-上","slug":"二年级-上","link":"#二年级-上","children":[]}],"git":{"updatedTime":1697256767000,"contributors":[{"name":"NOHI","email":"thisisnohi@163.com","commits":1}]},"filePathRelative":"zh/aa_everyday/Mandy.md"}');export{e as data};
